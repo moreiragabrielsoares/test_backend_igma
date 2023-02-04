@@ -24,4 +24,12 @@ async function getAllCustomers(req: Request, res: Response) {
   res.status(200).send(customers);
 }
 
-export { registerNewCustomer, getAllCustomers, getCustomerByCpf };
+async function getCustomersPaginated(req: Request, res: Response) {
+  const page = Number(req.query.page);
+
+  const customers = await customerService.getCustomersPaginated(page);
+
+  res.status(200).send(customers);
+}
+
+export { registerNewCustomer, getAllCustomers, getCustomerByCpf, getCustomersPaginated };
