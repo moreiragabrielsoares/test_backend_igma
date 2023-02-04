@@ -2,16 +2,8 @@ import { ICreateNewCustomerData } from '../types/customerTypes';
 import * as customerRepository from '../repositories/customerRepository';
 import { formatCpf } from '../utils/cpfHandler';
 
-async function getCustomerByCpf(customerCpf: string) {
-  customerCpf = formatCpf(customerCpf);
-
-  const customer = customerRepository.getCustomerByCpf(customerCpf);
-
-  return customer;
-}
-
-async function checkCustomerCpf(customerCpf: string) {
-  const customer = await getCustomerByCpf(customerCpf);
+async function findCustomerCpf(customerCpf: string) {
+  const customer = await customerRepository.getCustomerByCpf(formatCpf(customerCpf));
   if (!customer) {
     throw { type: 'not_found', message: 'This cpf is not registered' };
   }
@@ -20,7 +12,7 @@ async function checkCustomerCpf(customerCpf: string) {
 }
 
 async function registerNewCustomer(newCustomerData: ICreateNewCustomerData) {
-  const customer = await getCustomerByCpf(newCustomerData.cpf);
+  const customer = await customerRepository.getCustomerByCpf(formatCpf(newCustomerData.cpf));
   if (customer) {
     throw { type: 'conflict', message: 'This cpf is already registered' };
   }
@@ -39,4 +31,4 @@ async function getAllCustomers() {
   return customers;
 }
 
-export { getCustomerByCpf, registerNewCustomer, getAllCustomers, checkCustomerCpf };
+export { registerNewCustomer, getAllCustomers, findCustomerCpf };
