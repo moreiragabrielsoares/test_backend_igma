@@ -1,6 +1,6 @@
 import { ICreateNewCustomerData } from '../types/customerTypes';
 import * as customerRepository from '../repositories/customerRepository';
-import { formatCpf } from '../utils/cpfHandler';
+import { formatCpf, validateCpf } from '../utils/cpfHandler';
 
 async function findCustomerCpf(customerCpf: string) {
   const customer = await customerRepository.getCustomerByCpf(formatCpf(customerCpf));
@@ -18,6 +18,11 @@ async function registerNewCustomer(newCustomerData: ICreateNewCustomerData) {
   }
 
   newCustomerData.cpf = formatCpf(newCustomerData.cpf);
+
+  if (!validateCpf(newCustomerData.cpf)) {
+    throw { type: 'unprocessable', message: 'This cpf is not valid' };
+  }
+
   newCustomerData.birthdate = new Date(newCustomerData.birthdate);
 
   await customerRepository.registerNewCustomer(newCustomerData);
