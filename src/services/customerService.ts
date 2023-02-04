@@ -36,4 +36,14 @@ async function getAllCustomers() {
   return customers;
 }
 
-export { registerNewCustomer, getAllCustomers, findCustomerCpf };
+async function getCustomersPaginated(page: number) {
+  if (isNaN(page) || page === 0 || page % 1 !== 0) {
+    throw { type: 'not_found', message: 'This page is not valid' };
+  }
+
+  const customers = await customerRepository.getCustomersPaginated(page);
+
+  return customers;
+}
+
+export { registerNewCustomer, getAllCustomers, findCustomerCpf, getCustomersPaginated };
