@@ -12,5 +12,6 @@ customerRouter.post(
 );
 customerRouter.get('/customer', validateSchema(getCustomerByCpfSchema), customerController.getCustomerByCpf);
 customerRouter.get('/allCustomers', customerController.getAllCustomers);
+customerRouter.get('/customers', customerController.getCustomersPaginated);
 
 export { customerRouter };
