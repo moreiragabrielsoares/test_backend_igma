@@ -13,7 +13,7 @@ async function registerNewCustomer(req: Request, res: Response) {
 async function getCustomerByCpf(req: Request, res: Response) {
   const customerCpf = req.body as Omit<ICreateNewCustomerData, 'birthdate' | 'name'>;
 
-  const customer = await customerService.checkCustomerCpf(customerCpf.cpf);
+  const customer = await customerService.findCustomerCpf(customerCpf.cpf);
 
   res.status(200).send(customer);
 }
