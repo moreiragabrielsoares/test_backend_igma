@@ -17,4 +17,16 @@ async function getAllCustomers() {
   return prisma.customers.findMany();
 }
 
-export { registerNewCustomer, getCustomerByCpf, getAllCustomers };
+async function getCustomersPaginated(page: number) {
+  const limit = 5;
+
+  return prisma.customers.findMany({
+    orderBy: {
+      id: 'asc'
+    },
+    skip: limit * (page - 1),
+    take: limit
+  });
+}
+
+export { registerNewCustomer, getCustomerByCpf, getAllCustomers, getCustomersPaginated };
