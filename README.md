@@ -35,7 +35,7 @@ Obs: O arquivo .env foi colocado no repositório (em vez de apenas um .env.examp
 $ git clone https://github.com/moreiragabrielsoares/test_backend_igma.git
 ```
 
-#### - Para rodar a aplicação, rode o comando abaixo na pasta raiz do projeto
+#### - Para rodar a aplicação, rode o comando abaixo na pasta raiz do projeto (é necessário ter Docker instalado a máquina)
 
 ```bash
 $ docker-compose up
