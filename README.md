@@ -40,11 +40,15 @@ $ git clone https://github.com/moreiragabrielsoares/test_backend_igma.git
 $ docker-compose up
 ```
 
-#### - Para rodar os testes, rode o comando abaixo na pasta raiz do projeto
+#### - Para rodar os testes automatizados, rode o comando abaixo na pasta raiz do projeto
 
 ```bash
 $ npm run test:docker
 ```
+## Testanto Manualmente
+
+- O arquivo thunder-collection_test-igma.json é uma coleção pronta para realizar alguns testes manuais. Basta utilizar a extensão Thunder Client do VS Code e importar o arquivo. (lembrando que antes de testar manualmente, é necessário rodar a aplicação com "docker-compose up")
+- Se preferir utilizar o Postman basta utilizar o arquivo thunder-collection_test-igma_postman.json
 
 ## Features
 
