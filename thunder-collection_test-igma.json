@@ -1,0 +1,153 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "test-igma",
+  "dateExported": "2023-02-06T12:53:46.952Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "3a1d508d-a470-4401-8b5a-f8c1dd738dab",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "getAllUsers",
+      "url": "http://localhost:5000/allCustomers",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2023-02-03T02:18:57.567Z",
+      "modified": "2023-02-04T15:20:09.674Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "79531891-ae07-4b16-b56e-e054862a189f",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "getUsersPaginated",
+      "url": "http://localhost:5000/customers?page=1",
+      "method": "GET",
+      "sortNum": 25000,
+      "created": "2023-02-04T15:30:40.888Z",
+      "modified": "2023-02-06T10:31:36.721Z",
+      "headers": [],
+      "params": [{ "name": "page", "value": "1", "isPath": false }],
+      "tests": []
+    },
+    {
+      "_id": "f4bf1f60-d3ba-444b-8020-7211bf7ec0a9",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "getUsersPaginated-InvalidPage",
+      "url": "http://localhost:5000/customers?page=a",
+      "method": "GET",
+      "sortNum": 27500,
+      "created": "2023-02-06T11:06:29.279Z",
+      "modified": "2023-02-06T11:07:00.428Z",
+      "headers": [],
+      "params": [{ "name": "page", "value": "a", "isPath": false }],
+      "tests": []
+    },
+    {
+      "_id": "963dd48e-36c6-4abd-9afa-37b7f6a82ec0",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "getUserByCpf",
+      "url": "http://localhost:5000/customer",
+      "method": "GET",
+      "sortNum": 30000,
+      "created": "2023-02-03T02:20:10.864Z",
+      "modified": "2023-02-06T10:32:36.303Z",
+      "headers": [],
+      "params": [],
+      "body": { "type": "json", "raw": "{\n  \"cpf\": \"11111111111\"\n}", "form": [] },
+      "tests": []
+    },
+    {
+      "_id": "b8df0991-7f38-4fb2-a9c9-3482e87163de",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "getUserByCpf-invalidBody",
+      "url": "http://localhost:5000/customer",
+      "method": "GET",
+      "sortNum": 35000,
+      "created": "2023-02-06T11:07:38.973Z",
+      "modified": "2023-02-06T11:08:22.568Z",
+      "headers": [],
+      "params": [],
+      "body": { "type": "json", "raw": "{\n  \"cpf\": \"\"\n}", "form": [] },
+      "tests": []
+    },
+    {
+      "_id": "dc22244b-1f00-4178-b440-c27bf5ce029f",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "createNewUser",
+      "url": "http://localhost:5000/create-customer",
+      "method": "POST",
+      "sortNum": 40000,
+      "created": "2023-02-03T02:34:33.202Z",
+      "modified": "2023-02-05T22:22:04.106Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"cpf\": \"11111111111\",\n  \"name\": \"Gabriel\",\n  \"birthdate\": \"2000-02-04\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "e33bbcc5-5dcb-42c0-a9d6-1ade6825b283",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "createNewUser-InvalidBody",
+      "url": "http://localhost:5000/create-customer",
+      "method": "POST",
+      "sortNum": 45000,
+      "created": "2023-02-06T11:09:12.116Z",
+      "modified": "2023-02-06T11:09:39.986Z",
+      "headers": [],
+      "params": [],
+      "body": { "type": "json", "raw": "{\n  \"cpf\": \"11111111100\",\n  \"name\": \"Gabriel\"\n}", "form": [] },
+      "tests": []
+    },
+    {
+      "_id": "afbcc392-cb6f-412e-9621-d0a11d637b3b",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "createNewUser-InvalidCpf",
+      "url": "http://localhost:5000/create-customer",
+      "method": "POST",
+      "sortNum": 50000,
+      "created": "2023-02-06T11:08:45.459Z",
+      "modified": "2023-02-06T11:09:09.712Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"cpf\": \"11111111100\",\n  \"name\": \"Gabriel\",\n  \"birthdate\": \"2000-02-04\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "4a45a32e-172e-4c2a-aa47-fe9a87cb7108",
+      "colId": "67c01ae3-ba72-45a3-8fcf-d4e6bec419d1",
+      "containerId": "",
+      "name": "createNewUser-InvalidDate",
+      "url": "http://localhost:5000/create-customer",
+      "method": "POST",
+      "sortNum": 60000,
+      "created": "2023-02-06T11:09:54.960Z",
+      "modified": "2023-02-06T11:10:33.794Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"cpf\": \"11111111100\",\n  \"name\": \"Gabriel\",\n  \"birthdate\": \"2050-02-04\"\n}",
+        "form": []
+      },
+      "tests": []
+    }
+  ]
+}
