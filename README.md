@@ -32,25 +32,13 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 $ git clone https://github.com/moreiragabrielsoares/test_backend_igma.git
 ```
 
-#### - Para rodar na sua própria máquina, instale as dependências e rode o comando seguinte
-
-```bash
-$ npm install
-$ npm run dev
-```
-
-#### - Para rodar utilizando Docker (é necessário ter Docker instalado na máquina)
+#### - Para rodar a aplicação, rode o comando abaixo na pasta raiz do projeto
 
 ```bash
 $ docker-compose up
 ```
-#### - Para rodar os testes localmente, após já ter instalado as dependências, rode o comando a seguir
 
-```bash
-$ npm run test
-```
-
-#### - Para rodar os testes via Docker
+#### - Para rodar os testes, rode o comando abaixo na pasta raiz do projeto
 
 ```bash
 $ npm run test:docker
