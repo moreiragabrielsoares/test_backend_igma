@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "test-igma",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": ""
+  },
+  "item": [
+    {
+      "name": "getAllUsers",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/allCustomers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["allCustomers"],
+          "port": "5000"
+        }
+      }
+    },
+    {
+      "name": "getUsersPaginated",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/customers?page=1",
+          "query": [{ "key": "page", "value": "1" }],
+          "variable": [],
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["customers"],
+          "port": "5000"
+        }
+      }
+    },
+    {
+      "name": "getUsersPaginated-InvalidPage",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/customers?page=a",
+          "query": [{ "key": "page", "value": "a" }],
+          "variable": [],
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["customers"],
+          "port": "5000"
+        }
+      }
+    },
+    {
+      "name": "getUserByCpf",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/customer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["customer"],
+          "port": "5000"
+        },
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"cpf\": \"11111111111\"\n}"
+        }
+      }
+    },
+    {
+      "name": "getUserByCpf-invalidBody",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/customer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["customer"],
+          "port": "5000"
+        },
+        "body": { "mode": "raw", "options": { "raw": { "language": "json" } }, "raw": "{\n  \"cpf\": \"\"\n}" }
+      }
+    },
+    {
+      "name": "createNewUser",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5000/create-customer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["create-customer"],
+          "port": "5000"
+        },
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"cpf\": \"11111111111\",\n  \"name\": \"Gabriel\",\n  \"birthdate\": \"2000-02-04\"\n}"
+        }
+      }
+    },
+    {
+      "name": "createNewUser-InvalidBody",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5000/create-customer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["create-customer"],
+          "port": "5000"
+        },
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"cpf\": \"11111111100\",\n  \"name\": \"Gabriel\"\n}"
+        }
+      }
+    },
+    {
+      "name": "createNewUser-InvalidCpf",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5000/create-customer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["create-customer"],
+          "port": "5000"
+        },
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"cpf\": \"11111111100\",\n  \"name\": \"Gabriel\",\n  \"birthdate\": \"2000-02-04\"\n}"
+        }
+      }
+    },
+    {
+      "name": "createNewUser-InvalidDate",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5000/create-customer",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["create-customer"],
+          "port": "5000"
+        },
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"cpf\": \"11111111100\",\n  \"name\": \"Gabriel\",\n  \"birthdate\": \"2050-02-04\"\n}"
+        }
+      }
+    }
+  ]
+}
