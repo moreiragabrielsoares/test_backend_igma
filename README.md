@@ -26,6 +26,8 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 
 ## Instalando, Rodando e Testando a Aplicação
 
+Obs: O arquivo .env foi colocado no repositório (em vez de apenas um .env.example) propositalmente apenas para facilitar a utilização de outro usuário, que não precisarará configurar um arquivo .env
+
 #### - Clonar o repositório para sua máquina
 
 ```bash
@@ -88,14 +90,10 @@ $ npm run test:docker
   Exemplo de retorno:
 
   ```yaml
-  {
-    "id": 0,
-    "name": "Gabriel",
-    "cpf": "11111111111",
-    "birthdate": "YYYY-MM-DDTHH:mm:ss"
-  }
+  { 'id': 0, 'name': 'Gabriel', 'cpf': '11111111111', 'birthdate': 'YYYY-MM-DDTHH:mm:ss' }
   ```
-<br/>
+
+  <br/>
 
 - **GET** `/customers?page=1` - Retorna clientes cadatrados de forma paginada
 
@@ -106,25 +104,26 @@ $ npm run test:docker
   ```yaml
   [
     {
-      "id": 0,
-      "name": "gabriel",
-      "cpf": "11111111111",
-      "birthdate": "YYYY-MM-DDTHH:mm:ss",
-      "createAt": "YYYY-MM-DDTHH:mm:ss"
+      'id': 0,
+      'name': 'gabriel',
+      'cpf': '11111111111',
+      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
+      'createAt': 'YYYY-MM-DDTHH:mm:ss'
     },
     {
-      "id": 1,
-      "name": "gabriel",
-      "cpf": "22222222222",
-      "birthdate": "YYYY-MM-DDTHH:mm:ss",
-      "createAt": "YYYY-MM-DDTHH:mm:ss"
+      'id': 1,
+      'name': 'gabriel',
+      'cpf': '22222222222',
+      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
+      'createAt': 'YYYY-MM-DDTHH:mm:ss'
     },
     .
     .
     .
   ]
   ```
-<br/>
+
+  <br/>
 
 - **GET** `/allCustomers` - Retorna todos os clientes cadastrados
 
@@ -133,18 +132,18 @@ $ npm run test:docker
   ```yaml
   [
     {
-      "id": 0,
-      "name": "gabriel",
-      "cpf": "11111111111",
-      "birthdate": "YYYY-MM-DDTHH:mm:ss",
-      "createAt": "YYYY-MM-DDTHH:mm:ss"
+      'id': 0,
+      'name': 'gabriel',
+      'cpf': '11111111111',
+      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
+      'createAt': 'YYYY-MM-DDTHH:mm:ss'
     },
     {
-      "id": 1,
-      "name": "gabriel",
-      "cpf": "22222222222",
-      "birthdate": "YYYY-MM-DDTHH:mm:ss",
-      "createAt": "YYYY-MM-DDTHH:mm:ss"
+      'id': 1,
+      'name': 'gabriel',
+      'cpf': '22222222222',
+      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
+      'createAt': 'YYYY-MM-DDTHH:mm:ss'
     },
     .
     .
