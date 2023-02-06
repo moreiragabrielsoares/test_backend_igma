@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "build": "tsc",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:generate": "npx prisma generate",
+    "dev": "npm run prisma:migrate && npm run prisma:generate && ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "test:docker": "npm run test:compose -- up",
+    "test:compose": "docker-compose -f docker-compose.test.yml",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
