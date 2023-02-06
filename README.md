@@ -10,7 +10,8 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 
 - Refatoração para ser totalmente orientado a objetos seguindo princípios SOLID
 - Refatoração para se adequar a uma arquitetura de microsserviços
-- Reconfiguração para isolar totalmente o ambiente de testes, criando um banco de dados independente
+- Reconfiguração para isolar os ambientes de desenvolvimento e de testes, criando um banco de dados para testes
+- Adição de uma ferramenta de logging como [Pino](https://getpino.io/#/) ou 
 - Adição de testes unitários
 
 ## Tecnologias Utilizadas
