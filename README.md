@@ -24,33 +24,33 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 - [Joi](https://joi.dev/)
 - [Jest](https://jestjs.io/)
 
-## Instalação, Rodando e Testando a Aplicação
+## Instalando, Rodando e Testando a Aplicação
 
-### - Clonar o repositório para sua máquina
+#### - Clonar o repositório para sua máquina
 
 ```bash
-$ git clone
+$ git clone https://github.com/moreiragabrielsoares/test_backend_igma.git
 ```
 
-### - Para rodar na sua própria máquina, instale as dependências e rode o comando seguinte
+#### - Para rodar na sua própria máquina, instale as dependências e rode o comando seguinte
 
 ```bash
 $ npm install
 $ npm run dev
 ```
 
-### - Para rodar utilizando Docker (é necessário ter Docker instalado na máquina)
+#### - Para rodar utilizando Docker (é necessário ter Docker instalado na máquina)
 
 ```bash
 $ docker-compose up
 ```
-### - Para rodar os testes localmente, após já ter instalado as dependências, rode o comando a seguir
+#### - Para rodar os testes localmente, após já ter instalado as dependências, rode o comando a seguir
 
 ```bash
 $ npm run test
 ```
 
-### - Para rodar os testes via Docker
+#### - Para rodar os testes via Docker
 
 ```bash
 $ npm run test:docker
@@ -68,11 +68,11 @@ $ npm run test:docker
 
   Esta rota espera receber um body com o seguinte formato:
 
-  ```json
+  ```yaml
   {
-  	"name": "Gabriel",
-  	"cpf": "11111111111" | "111.111.111-11",
-  	"birthdate": "YYYY-MM-DD",
+    "name": "Gabriel",
+    "cpf": "11111111111" | "111.111.111-11",
+    "birthdate": "YYYY-MM-DD",
   }
   ```
 
@@ -81,13 +81,15 @@ $ npm run test:docker
   - Se o CPF enviado no body já estiver cadastrado, será retornado status 409
   - Em caso de sucesso, será retornado status 201 e a mensagem "New customer registered!"
 
+<br/>
+
 - **GET** `/customer` - Retorna um único cliente (se cadastrado)
 
   Esta rota espera receber um body com o seguinte formato:
 
-  ```json
+  ```yaml
   {
-  	"cpf": "11111111111" | "111.111.111-11"
+    "cpf": "11111111111" | "111.111.111-11"
   }
   ```
 
@@ -97,7 +99,7 @@ $ npm run test:docker
 
   Exemplo de retorno:
 
-  ```json
+  ```yaml
   {
     "id": 0,
     "name": "Gabriel",
@@ -105,6 +107,7 @@ $ npm run test:docker
     "birthdate": "YYYY-MM-DDTHH:mm:ss"
   }
   ```
+<br/>
 
 - **GET** `/customers?page=1` - Retorna clientes cadatrados de forma paginada
 
@@ -112,7 +115,7 @@ $ npm run test:docker
 
   Exemplo de retorno (Será sempre limitado a 5 clientes por página):
 
-  ```json
+  ```yaml
   [
     {
       "id": 0,
@@ -133,12 +136,13 @@ $ npm run test:docker
     .
   ]
   ```
+<br/>
 
 - **GET** `/allCustomers` - Retorna todos os clientes cadastrados
 
   Exemplo de retorno:
 
-  ```json
+  ```yaml
   [
     {
       "id": 0,
