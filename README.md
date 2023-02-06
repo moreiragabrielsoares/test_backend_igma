@@ -6,11 +6,12 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 - CPF
 - Data de nascimento
 
-## Pontos que ainda serão melhorados
+## Pontos a serem melhorados
 
-- Este projeto será refatorado para ser totalmente orientado a objetos seguindo principios SOLID
-- Também será refatorado para se adequar a uma arquitetura de microsserviços
-- Serão adicionados mais testes unitários
+- Refatoração para ser totalmente orientado a objetos seguindo princípios SOLID
+- Refatoração para se adequar a uma arquitetura de microsserviços
+- Reconfiguração para isolar totalmente o ambiente de testes, criando um banco de dados independente
+- Adição de testes unitários
 
 ## Tecnologias Utilizadas
 
@@ -23,7 +24,7 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 - [Joi](https://joi.dev/)
 - [Jest](https://jestjs.io/)
 
-## Instalação
+## Instalação, Rodando e Testando a Aplicação
 
 ### - Clonar o repositório para sua máquina
 
@@ -31,16 +32,28 @@ Este projeto constitui uma API para cadastro de clientes, que irá armazenar as 
 $ git clone
 ```
 
-### - Para rodar na sua própria máquina, instale as dependências
+### - Para rodar na sua própria máquina, instale as dependências e rode o comando seguinte
 
 ```bash
-npm install
+$ npm install
+$ npm run dev
 ```
 
 ### - Para rodar utilizando Docker (é necessário ter Docker instalado na máquina)
 
 ```bash
-npm install
+$ docker-compose up
+```
+### - Para rodar os testes localmente, após já ter instalado as dependências, rode o comando a seguir
+
+```bash
+$ npm run test
+```
+
+### - Para rodar os testes via Docker
+
+```bash
+$ npm run test:docker
 ```
 
 ## Features
@@ -66,7 +79,7 @@ npm install
   - O valor do CPF será validado conforme explicação deste [algoritmo](https://www.macoratti.net/alg_cpf.htm#:~:text=O). Se o seu valor não passar nesta validação, será retornado status 422
   - Se o body enviado estiver com o formato errado, será retornado status 422
   - Se o CPF enviado no body já estiver cadastrado, será retornado status 409
-  - Em caso de sucesso, será retornado status 201
+  - Em caso de sucesso, será retornado status 201 e a mensagem "New customer registered!"
 
 - **GET** `/customer` - Retorna um único cliente (se cadastrado)
 
@@ -95,7 +108,7 @@ npm install
 
 - **GET** `/customers?page=1` - Retorna clientes cadatrados de forma paginada
 
-  Esta rota espera receber um valor de página(page) válido (inteiro maior ou igual a 1) obrigatoriamente. Se nenhum valor for enviado para page ou se for um valor inválido, será retornado status 500
+  Esta rota espera receber um valor de página(page) válido (inteiro maior ou igual a 1) obrigatoriamente. Se nenhum valor for enviado para page ou se for um valor inválido, será retornado status 404
 
   Exemplo de retorno (Será sempre limitado a 5 clientes por página):
 
