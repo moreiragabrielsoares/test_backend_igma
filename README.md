@@ -95,7 +95,12 @@ $ npm run test:docker
   Exemplo de retorno:
 
   ```yaml
-  { 'id': 0, 'name': 'Gabriel', 'cpf': '11111111111', 'birthdate': 'YYYY-MM-DDTHH:mm:ss' }
+  { 
+    "id": 0, 
+    "name": "Gabriel", 
+    "cpf": "11111111111", 
+    "birthdate": "YYYY-MM-DDTHH:mm:ss" 
+  }
   ```
 
   <br/>
@@ -109,18 +114,18 @@ $ npm run test:docker
   ```yaml
   [
     {
-      'id': 0,
-      'name': 'gabriel',
-      'cpf': '11111111111',
-      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
-      'createAt': 'YYYY-MM-DDTHH:mm:ss'
+      "id": 0,
+      "name": "gabriel",
+      "cpf": "11111111111",
+      "birthdate": "YYYY-MM-DDTHH:mm:ss",
+      "createAt": "YYYY-MM-DDTHH:mm:ss"
     },
     {
-      'id': 1,
-      'name': 'gabriel',
-      'cpf': '22222222222',
-      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
-      'createAt': 'YYYY-MM-DDTHH:mm:ss'
+      "id": 1,
+      "name": "gabriel",
+      "cpf": "22222222222",
+      "birthdate": "YYYY-MM-DDTHH:mm:ss",
+      "createAt": "YYYY-MM-DDTHH:mm:ss"
     },
     .
     .
@@ -137,18 +142,18 @@ $ npm run test:docker
   ```yaml
   [
     {
-      'id': 0,
-      'name': 'gabriel',
-      'cpf': '11111111111',
-      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
-      'createAt': 'YYYY-MM-DDTHH:mm:ss'
+      "id": 0,
+      "name": "gabriel",
+      "cpf": "11111111111",
+      "birthdate": "YYYY-MM-DDTHH:mm:ss",
+      "createAt": "YYYY-MM-DDTHH:mm:ss"
     },
     {
-      'id': 1,
-      'name': 'gabriel',
-      'cpf': '22222222222',
-      'birthdate': 'YYYY-MM-DDTHH:mm:ss',
-      'createAt': 'YYYY-MM-DDTHH:mm:ss'
+      "id": 1,
+      "name": "gabriel",
+      "cpf": "22222222222",
+      "birthdate": "YYYY-MM-DDTHH:mm:ss",
+      "createAt": "YYYY-MM-DDTHH:mm:ss"
     },
     .
     .
