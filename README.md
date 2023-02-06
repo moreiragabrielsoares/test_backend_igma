@@ -49,7 +49,7 @@ $ npm run test:docker
 ## Testanto Manualmente
 
 - O arquivo thunder-collection_test-igma.json é uma coleção pronta para realizar alguns testes manuais. Basta utilizar a extensão Thunder Client do VS Code e importar o arquivo. (lembrando que antes de testar manualmente, é necessário rodar a aplicação com "docker-compose up")
-- Se preferir utilizar o Postman basta utilizar o arquivo thunder-collection_test-igma_postman.json
+- Se preferir utilizar o Postman, basta utilizar o arquivo thunder-collection_test-igma_postman.json
 
 ## Features
 
